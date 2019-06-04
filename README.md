@@ -7,6 +7,8 @@ The content on this repository will only be truly useful to you if you actually 
 
 If you cannot attend the course in Lochristi, Belgium, you can still join using the Zoom link provided in the Telegram Group.
 
+[JumpScaleX](https://github.com/threefoldtech/jumpscaleX), an automation framework written in Python, will also be covered as part of this course and how it can help you automate the boring stuff.
+
 ## Tools
 
 - [Python Tutor](http://pythontutor.com/visualize.html#mode=edit): helps you understand what happens with your code (no need to go too deep into this);
