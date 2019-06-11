@@ -14,7 +14,12 @@ If you cannot attend the course in Lochristi, Belgium, you can still join using 
 - [Python Tutor](http://pythontutor.com/visualize.html#mode=edit): helps you understand what happens with your code (no need to go too deep into this);
 - [Python Anywhere](https://eu.pythonanywhere.com): online free editor and REPL<sup>(1)</sup> to allow you to write/execute scripts as well as fool around, without the need for a local setup;
    - NOTE: If you are a student of this course please add me as your teacher (you'll find it under account settings > teacher), so that I can see your consoles and scripts and help you when needed. My username is `glendc`.
+- [pip](https://pip.readthedocs.io/en/stable/): allows you to install user packages (libraries that are not standard);
+
+## Links
+- [Python 3 Standard Library](https://docs.python.org/3/library/): documentation for all standard libraries<sup>2</sup>;
 
 ## Footnotes
 
 1. REPL, stands for Read-Evaluate-Print-Loop. Essentially it is a tool that will read and evaluate your code and print the result. Give it `1+1` it will give you `2`.
+2. Standard Library: a set of librares that are included by default with your [Python] installation;
