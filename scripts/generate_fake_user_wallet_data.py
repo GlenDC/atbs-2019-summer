@@ -1,0 +1,109 @@
+import os, random
+
+names = """
+Jon Stokes
+Taylor Oconnell
+Tina Lopez
+Jason Trujillo
+John Gordon
+Alyssa Evans
+Mckenzie Fuller
+John Alvarez
+Ashley Wall
+Andrew Phillips
+Casey Lindsey
+Andrew Ortiz
+Jennifer Vargas
+Caitlin Baker
+Michael West
+Claudia Alvarez
+Monica Baird
+Patrick Avila
+Gabrielle Avila
+Anna Norton
+Nathaniel Myers
+Holly Reed
+Michael Webster
+John Fischer
+Jonathan Goodman
+Dennis Johnson
+Christopher Owen
+Daniel Serrano
+Renee Elliott
+Lauren Lambert
+Donald Mcneil
+Jordan Collins
+Holly Wilson
+Chad Rodriguez
+Joshua Mooney
+Robert Hanson
+Brittany Young
+Beth Mcintyre
+Kimberly Mitchell
+Joshua Becker
+Paul Shepard
+Marilyn Guerrero
+Brian Mcmillan
+Danielle Bush
+Michael Rojas
+Dennis Good
+Alexandra Hobbs
+Lance Thompson
+Cheryl Parker
+Patrick Fox
+Amanda Hayes
+Brandon Davis
+Mario Carson
+Jennifer Spencer
+Heather Wilson
+Teresa Grant
+Olivia Lee
+Robert Bates
+Cynthia Mullins
+Jonathan Terrell
+Robert Miller
+William Hernandez
+Charles Beck
+Joshua Moore
+Kelly Barber
+Kathleen Johnson
+Lauren Johnson
+Amanda Nash DVM
+Debra Barajas
+Kathryn Cardenas
+Courtney Nelson
+Richard Mayer
+Gregory Gonzales
+Jasmin Lopez
+Samantha Lewis
+David Santiago
+Sandra Jones
+Janet Sullivan
+Chase Walsh
+Kyle Cox
+Stephen Wise
+Daniel Blair
+Marvin Willis
+Micheal Gomez
+Cassandra Bishop
+Eric Bowman
+David Skinner
+Victoria Stewart
+Jill Ryan
+Ryan Flores
+Kayla Robinson
+Daniel Brown
+Kathryn Atkinson
+Dr. Victoria Burke
+Daniel Mcdonald
+Gary Williams
+Diane Carroll
+Dawn Williams
+Arthur Burgess
+""".splitlines()[1:]
+random.shuffle(names)
+
+print("name,wallet")
+for name in names:
+    if bool(random.getrandbits(1)):
+        print("\"{}\",\"01{}\"".format(name, os.urandom(38).hex()))
