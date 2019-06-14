@@ -1,5 +1,3 @@
-import random
-
 contact_info_rows = """John Manning	679 Michelle Ridge, Douglasshire, NM 28291	rbrown@hotmail.com
 Christopher Levine	595 Cowan Bridge, Caldwellville, MA 62210	brittany25@fisher.biz
 Jose Marshall	142 Catherine Meadow Suite 873, Johnsonmouth, TN 48808	dana00@gmail.com
@@ -101,6 +99,16 @@ Brittany Robinson	736 Kane Fort Apt. 293, Johnhaven, GA 99750	gwalters@hotmail.c
 Jennifer Brooks	617 Johnson Lane, Lake Robertport, CA 72527	sextonsamantha@campbell.com
 """.splitlines()
 
+users = {}
+for row in contact_info_rows:
+    columns = row.split("\t")
+    name = columns[0]
+    address = columns[1]
+    email = columns[2]
+    users[name] = {}
+    users[name]["address"] = address
+    users[name]["email"] = email
+
 wallet_info_rows = """David Ramirez	01d26e218457159588b1ed984ea7c896ba31bdda542f2840fe29025a3115a311949642fe74c55b
 Jennifer Brooks	0118bb893688b995c293d3c7bbae9bab7f8b715f7e0cb4444157a2cbf3e074f7bb622181f3b0d9
 Gene Lopez	01739999812892cfb237c2c2f802b2950172ef52244919b86440e374d2688a1001db4d352977e8
@@ -156,25 +164,28 @@ Anthony Patel	01fcac24f19d17230c824b4d7b891c4b8835300c9d8e5f3688883d613f0a9f50cc
 Carl Brennan	01069904669fe5190591f8548e35ed5a12e17e636b4398e75d54671ec3b38cface9628db255fca
 Kelly Shepherd	01eb7c9f2b236438915f633afa368768bfd12d1cb6106b731518941a7e9da113ade1456b6608b2
 Cynthia Barry	012f2033ace1b0b17af28c02cc6e38d9e510d0db6c37d06ad036fdf611f32a4e3209960cee3993
+John Evil	01be276cf872adf8aa7403a43dfd4314c9dac6443167d4bdaf32facb931d588011fcc555886b92
 """.splitlines()
 
-data = {}
-for row in contact_info_rows:
-    columns = row.split("\t")
-    data[columns[0]] = {
-        "address": columns[1],
-        "email": columns[2],
-    }
 for row in wallet_info_rows:
     columns = row.split("\t")
-    data[columns[0]]["wallet"] = columns[1]
+    name = columns[0]
+    wallet = columns[1]
+    if name in users:
+        users[name]["wallet"] = wallet
+
+# next time: import merged data back into google sheets
+
+import random
 
 winner_count = 0
+
 while winner_count < 10:
-    candidates = len(data)
-    name = random.choice(list(data.keys()))
-    user = data[name]
+    name = random.choice(list(users.keys()))
+    user = users[name]
     if "wallet" in user:
-        print("send an email to {} at {} and send prize to {}".format(name, user["email"], user["wallet"]))
-        del data[name]
+        email = user["email"]
+        wallet = user["wallet"]
+        print("give prize to {}, send email to {} and send money to {}".format(name, email, wallet))
         winner_count += 1
+    del users[name]
