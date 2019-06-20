@@ -18,6 +18,8 @@ If you cannot attend the course in Lochristi, Belgium, you can still join using 
 
 ## Links
 - [Python 3 Standard Library](https://docs.python.org/3/library/): documentation for all standard libraries<sup>2</sup>;
+- [Docs Editors Help](https://support.google.com/docs#topic=1382883): look up any Google Sheets function;
+- [Google Query Language Reference](https://developers.google.com/chart/interactive/docs/querylanguage): the reference documentation for the Query language (used as part of the `QUERY` function in Google Sheets);
 
 ## Footnotes
 
